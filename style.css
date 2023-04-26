@@ -1,0 +1,20 @@
+.card {
+  box-shadow: -0px -0px 200px #7683c972;
+}
+i {
+  word-spacing: 10px;
+  letter-spacing: 3px;
+}
+.content {
+  margin-bottom: 40px;
+}
+.readMore {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 13px;
+}
+.negative {
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(142, 142, 142);
+}

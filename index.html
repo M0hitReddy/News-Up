@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Up</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="pt-5 bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">News Up</a>
+        <span class="text-light fs-2"> | </span>
+        <button
+          class="navbar-toggler bg-dark rounded-2 px-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="text-light fs-1 material-symbols-outlined"> menu </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" id="home" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="sports"
+                aria-current="page"
+                href="#"
+                >Sports</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="gaming"
+                aria-current="page"
+                href="#"
+                >Gaming</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="weather"
+                aria-current="page"
+                href="#"
+                >Weather</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="money" aria-current="page" href="#"
+                >Money</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                language
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">Arabic</a>
+                </li>
+                <!-- ar -->
+                <li>
+                  <a class="dropdown-item" href="#">German</a>
+                </li>
+                <!-- de -->
+                <li>
+                  <a class="dropdown-item" href="#">English</a>
+                </li>
+                <!-- en -->
+                <li>
+                  <a class="dropdown-item" href="#">Spanish</a>
+                </li>
+                <!-- es -->
+                <li>
+                  <a class="dropdown-item" href="#">French</a>
+                </li>
+                <!-- fr -->
+                <li>
+                  <a class="dropdown-item" href="#">Italian</a>
+                </li>
+                <!-- it -->
+                <li>
+                  <a class="dropdown-item" href="#">Dutch</a>
+                </li>
+                <!-- nl -->
+                <li>
+                  <a class="dropdown-item" href="#">Portuguese</a>
+                </li>
+                <!-- pt -->
+                <li>
+                  <a class="dropdown-item" href="#">Russian</a>
+                </li>
+                <!-- ru -->
+                <li>
+                  <a class="dropdown-item" href="#">Chinese</a>
+                </li>
+                <!-- zh -->
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 text-dark"
+              value=""
+              id="searchBar"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-light"
+              onclick="getQuery(event)"
+              type="submit"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="mt-5 text-center text-light fs-4" id="results"></div>
+    <div
+      class="container-fluid mt-5 d-flex flex-wrap justify-content-center"
+      id="articles"
+    >
+      <svg
+        class="text-light"
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-loader"
+      >
+        <line x1="12" y1="2" x2="12" y2="6"></line>
+        <line x1="12" y1="18" x2="12" y2="22"></line>
+        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+        <line x1="2" y1="12" x2="6" y2="12"></line>
+        <line x1="18" y1="12" x2="22" y2="12"></line>
+        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+      </svg>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center mt-5">
+        <li class="page-item">
+          <a
+            class="page-link bg-black"
+            href="#"
+            id="prev"
+            aria-label="Previous"
+          >
+            <span aria-hidden="true">&laquo; prev</span>
+          </a>
+        </li>
+        <li class="page-item mx-3"></li>
+        <li class="page-item">
+          <a class="page-link bg-black" href="#" id="next" aria-label="Next">
+            <span aria-hidden="true">next &raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- https://getbootstrap.com/docs/5.3/assets/img/bootstrap-icons.png -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
