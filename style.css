@@ -18,3 +18,6 @@ i {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(142, 142, 142);
 }
+.fa{
+  transform: translateX(2px);
+}
